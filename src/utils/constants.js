@@ -11,8 +11,5 @@ export const TMDB_API_OPTIONS =  {
       Authorization: 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJmYTAxZDhkNDYyMDdiNzRlZTBmMWQwOTY3NDhjNzhjZCIsInN1YiI6IjY1YTI4MzE0YTZhNGMxMDEyNWE0NjZhMiIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.jB6N3zME1Y9Cn3iJ-lPVu2_ozEazwCqwggWCr_aX8Gw'
     }
   };
-  
 
-// export const TMDB_API_KEY = "fa01d8d46207b74ee0f1d096748c78cd";
-
-// export const TMDB_API_ACCESS_TOKEN = "eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJmYTAxZDhkNDYyMDdiNzRlZTBmMWQwOTY3NDhjNzhjZCIsInN1YiI6IjY1YTI4MzE0YTZhNGMxMDEyNWE0NjZhMiIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.jB6N3zME1Y9Cn3iJ-lPVu2_ozEazwCqwggWCr_aX8Gw";
+export const IMAGE_CDN_URL = "https://image.tmdb.org/t/p/w780";

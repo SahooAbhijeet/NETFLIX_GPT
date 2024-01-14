@@ -6,9 +6,9 @@ import { useEffect } from "react";
 const useMoviesTrailer = (movieId) => {
 
     const dispatch = useDispatch();
-  /*
-  * Fetch Movie Trailer and updating the store with the trailer video
-   */
+    /*
+      * Fetch Movie Trailer And Updating The Store With The Trailer Video
+    */
 
   const getMoviesVideo = async () => {
     const data = await fetch(
@@ -18,18 +18,16 @@ const useMoviesTrailer = (movieId) => {
       TMDB_API_OPTIONS
       );
       const json = await data.json();
-      console.log(json);
-
+      
       const filterData = json.results.filter((video) => video.type === "Trailer");
       const trailer = filterData.length ? filterData[0] : json.results[0];
       console.log(trailer);
       dispatch(addTrailerVideos(trailer));
   }
 
-  useEffect(() => {
-    getMoviesVideo();
-  }, []);
-
+    useEffect(() => {
+      getMoviesVideo();
+    }, []);
 }
 
- export default useMoviesTrailer;
+export default useMoviesTrailer;

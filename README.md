@@ -16,3 +16,14 @@
 - Netflix GPT
     - Search Bar
     - MOvie Suggestion
+
+
+    
+    /*
+    *  MainContainer
+    *       VideoBackground
+    *       VideoTitle
+    *    SecondaryContainer
+    *       MoviesList*N
+    *       Cards*N   
+    */

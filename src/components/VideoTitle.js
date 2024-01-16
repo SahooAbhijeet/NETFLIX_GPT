@@ -4,14 +4,14 @@ import { IoIosInformationCircleOutline } from "react-icons/io";
 
 const VideoTitle = ({title, overview}) => {
   return (
-    <div className='pt-[12%] px-24  absolute bg-gradient-to-r from-black text-white w-screen aspect-video'>
-      <h1 className='font-bold text-5xl'>{title}</h1>
-      <p className='w-1/3 text-lg py-6'>{overview}</p>
+    <div className='pt-[10%] px-6 md:px-24 absolute bg-gradient-to-r from-black text-white w-screen aspect-video'>
+      <h1 className='font-bold text-2xl md:text-5xl md:mt-0 mt-[140px] '>{title}</h1>
+      <p className='w-1/3 text-lg py-6 hidden md:inline-block'>{overview}</p>
 
       <div>
-        <button className='text-black bg-white px-12 p-4 text-3xl rounded-lg  inline-flex hover:bg-opacity-80 '> <FaPlay className='my-2 mx-4'/> Play</button>
+        <button className='text-black bg-white px-3 md:px-12 py-1 md:py-4  text-2xl font-mono rounded-lg hover:bg-opacity-80 hidden md:inline-block '> Play</button>
         
-        <button className='bg-gray-500 opacity-50 hover:bg-gray-600 mx-4 text-white px-12 p-4 text-2xl rounded-lg inline-flex'> <IoIosInformationCircleOutline className=' mx-3  text-4xl' /> More Info </button>
+        <button className=' px-3 md:px-12 py-1 md:py-4  text-2xl rounded-lg hover:bg-opacity-80 font-mono hidden text-white md:inline-block hover:bg-gray-600 bg-gray-500 opacity-50 mx-5'>  More Info </button>
 
       </div>
 

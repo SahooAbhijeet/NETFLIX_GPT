@@ -27,3 +27,15 @@
     *       MoviesList*N
     *       Cards*N   
     */
+
+
+    /* {PLANNING OF SecondaryContainer}
+        * MovieList - Popular
+            *( Movie Cards* N)
+        * MovieList - Now Playing
+            *( Movie Cards* N)
+        * MovieList - Trending
+            *( Movie Cards* N)
+        * MovieList - Horror
+            *( Movie Cards* N)
+    */

@@ -2,7 +2,11 @@ import React, { useRef, useState } from 'react'
 import Header from './Header'
 import { checkValidData } from '../utils/validate'
 import { auth } from '../utils/firebase'
-import {  createUserWithEmailAndPassword, signInWithEmailAndPassword, updateProfile } from "firebase/auth";
+import { 
+  createUserWithEmailAndPassword, 
+  signInWithEmailAndPassword, 
+  updateProfile 
+  } from "firebase/auth";
 import { useDispatch } from 'react-redux';
 import { addUser } from '../Redux/Slices/userSlice';
 import { NETFLIX_BACKGROUND, USER_AVATAR } from '../utils/constants';
@@ -87,19 +91,21 @@ const Login = () => {
   }
   return (
     <div>
-    <div className='absolute'>
-        <Header />
+              <Header />
+
+    <div className='absolute '>
         <img 
+        className='w-screen md:object-cover object-cover'
         src={NETFLIX_BACKGROUND}
         alt='logo'
         />
     </div>
 
 <form 
-className='absolute w-3/12  mt-20 p-12 my-36 text-white mx-auto left-0 right-0 bg-black rounded-lg bg-opacity-80'
+className='absolute w-full h-min md:w-3/12 p-12 my-20 text-white mx-auto left-0 right-0 bg-black rounded-lg bg-opacity-80 '
 onSubmit={(e) => e.preventDefault()}
 >
-<h1 className='text-3xl py-4 font-bold'>
+<h1 className='text-3xl py-4  font-bold'>
 {isSignInForm ? "Sign In" : "Sign Up"}
 </h1>
 

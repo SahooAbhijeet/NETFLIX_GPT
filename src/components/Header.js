@@ -61,15 +61,15 @@ const Header = () => {
   }
 
   return (
-    <div className='absolute w-screen px-8 py-2 bg-gradient-to-b from-black z-10 flex justify-between'>
+    <div className='absolute w-screen px-8 py-2 bg-gradient-to-b from-black z-10 flex flex-col md:flex-row justify-between '>
         <img 
         src={NETFLIX_LOGO}
         alt='logo'
-        className='w-44'
+        className='w-44 mx-auto md:mx-0'
         />
 
         {user && (
-        <div className='flex p-4 '>
+        <div className='flex p-2 '>
             {showGptSearch && (
             <select className='p-2 m-2 bg-gray-900 text-white' onChange={handleChangeLanguage}>
               {SUPPORTED_LANGUAGES.map((lang) => (
@@ -79,21 +79,21 @@ const Header = () => {
               )
             )}
             </select>)}
-          <button className='bg-purple-800 py-2 px-4 text-white rounded-lg mx-4 my-1'
+          <button className='bg-purple-800 py-2 px-4 text-white rounded-lg mx-4 my-2 hidden md:block'
           onClick={handleGptSearchClick}
           >
 
           {showGptSearch ? "HomePage" : "GPT Search"} 
-          
+
           </button>
           <img 
-          className='h-12 w-12'
+          className='h-12 w-12 hidden md:block'    
           src={user.photoURL}
           alt='user-icon'
           />
 
           <button 
-          className='text-red-500 font-bold '
+          className='text-red-500 font-bold hidden md:block'
           onClick={handleSignOut}
           >
             (Sign Out)

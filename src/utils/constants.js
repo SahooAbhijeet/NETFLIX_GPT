@@ -18,4 +18,7 @@ export const SUPPORTED_LANGUAGES = [
   {identifer: "en", name: "English"},
   {identifer: "hindi", name: "Hindi"},
   {identifer: "french", name: "French"},
+  {identifer: "spanish", name: "Spanish"},
 ]
+
+export const OPEN_AI_SECRET_KEY = "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";

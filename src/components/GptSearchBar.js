@@ -1,12 +1,27 @@
 import React, { useRef } from 'react'
 import lang from '../utils/languageConstants'
-import { useSelector } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
 import openai from '../utils/openAI';
+import { TMDB_API_OPTIONS } from '../utils/constants';
+import { addGptMoviesResult } from '../Redux/Slices/GptSlice';
 
 const GptSearchBar = () => {
 
     const langKey = useSelector(store => store.config.lang);
     const searchText = useRef(null);
+    const dispatch = useDispatch();
+    
+    // This function will take a movie and search that  movie in a TMDB API
+      const searchMovieTMDB = async (movie) => {
+        const data = await fetch(
+        "https://api.themoviedb.org/3/search/movie?query=" + 
+          movie +
+        "&include_adult=false&language=en-US&page=1",
+        TMDB_API_OPTIONS
+        );
+        const json = await data.json();
+        return json.results; 
+      }
 
     const handleGptSearchClick = async () => {
       // Make an API call to GPT API and get the movie results
@@ -21,7 +36,26 @@ const GptSearchBar = () => {
         model: 'gpt-3.5-turbo',
       });
 
-      console.log(gptResults.choices)
+      if(!gptResults) {
+       console.log({message: "GPT API FAILED"});
+      }
+      console.log(gptResults?.choices[0]?.message?.content);
+
+      const gptMovies = gptResults?.choices[0]?.message?.content.split(",");
+
+      // ['Stree', ' Bhool Bhulaiyaa', ' Go Goa Gone', ' Housefull 3', ' Roohi']
+      // For each movie call the Search API of TMDB and findout the results of the movie
+
+      const promiseArray = gptMovies.map((movie) => searchMovieTMDB(movie));
+
+      const tmdbResults = await Promise.all(promiseArray);
+      console.log(tmdbResults);
+
+      dispatch(
+        addGptMoviesResult({
+          moviesNames: gptMovies, moviesResult: tmdbResults
+         }));
+
     }
   return (
     <div className='pt-[45%] md:pt-[10%] flex justify-center'>

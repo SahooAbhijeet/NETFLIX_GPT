@@ -29,7 +29,7 @@
     */
 
 
-    /* {PLANNING OF SecondaryContainer}
+     {PLANNING OF SecondaryContainer}
         * MovieList - Popular
             *( Movie Cards* N)
         * MovieList - Now Playing
@@ -38,4 +38,14 @@
             *( Movie Cards* N)
         * MovieList - Horror
             *( Movie Cards* N)
-    */
+
+
+              ## const gptMovies = gptResults?.choices[0]?.message?.content.split(","); --> For each movie call the Search API of TMDB and findout the results of the movie" 
+
+       * Stree, Bhool Bhulaiyaa, Go Goa Gone, Housefull 3, Roohi
+            *  0: "Stree" 
+            * 1: "Bhool Bhulaiyaa"
+            * 2: "Go Goa Gone" 
+            * 3: "Housefull 3"
+            * 4: "Roohi"   
+        

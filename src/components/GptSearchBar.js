@@ -53,7 +53,7 @@ const GptSearchBar = () => {
 
       dispatch(
         addGptMoviesResult({
-          moviesNames: gptMovies, moviesResult: tmdbResults
+          moviesNames: gptMovies, moviesResults: tmdbResults
          }));
 
     }

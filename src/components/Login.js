@@ -11,6 +11,7 @@ import { useDispatch } from 'react-redux';
 import { addUser } from '../Redux/Slices/userSlice';
 import { NETFLIX_BACKGROUND, USER_AVATAR } from '../utils/constants';
 
+
 const Login = () => {
 
   const [isSignInForm, setIsSignInForm] = useState(true);
@@ -35,7 +36,6 @@ const Login = () => {
         auth, 
         email.current.value, 
         password.current.value, 
-        // name.current.value
         )
         .then((userCredential) => {
           // Signed up 

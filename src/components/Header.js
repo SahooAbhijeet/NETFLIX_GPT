@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom';
 import { onAuthStateChanged, signOut } from "firebase/auth";
 import { auth } from '../utils/firebase';
@@ -14,6 +14,8 @@ const Header = () => {
   const dispatch = useDispatch();
   const user = useSelector((store) => store.user);
   const showGptSearch = useSelector((store) => store.gpt.showGptSearch);
+
+
 
   const handleSignOut = () => {
     signOut(auth).then(() => {
@@ -59,7 +61,9 @@ const Header = () => {
   const handleChangeLanguage = (e) => {
     dispatch(changeLanguage(e.target.value));
   }
-
+const handleTheme = () => {
+  setTheme(theme === "dark" ? "light" : "dark")
+}
   return (
     <div className='absolute w-screen px-8 py-2 bg-gradient-to-b from-black z-10 flex flex-col md:flex-row justify-between '>
         <img 
@@ -68,10 +72,13 @@ const Header = () => {
         className='w-44 mx-auto md:mx-0'
         />
 
+
+
+
         {user && (
         <div className='flex p-2 '>
             {showGptSearch && (
-            <select className='p-2 m-2 bg-gray-900 text-white' onChange={handleChangeLanguage}>
+            <select className='p-2 m-2 bg-gray-900 text-white appearance-auto dark:bg-slate-800' onChange={handleChangeLanguage}>
               {SUPPORTED_LANGUAGES.map((lang) => (
               <option key={lang.identifer}value={lang.identifer}>
                 {lang.name}
@@ -79,7 +86,7 @@ const Header = () => {
               )
             )}
             </select>)}
-          <button className='bg-purple-800 py-2 px-4 text-white rounded-lg mx-4 my-2 hidden md:block'
+          <button className='bg-purple-800 md:py-2 py-2 px-2 md:px-4 text-white rounded-lg -mx-6 md:mx-3 md:my-2 -my-3 md:p-4'
           onClick={handleGptSearchClick}
           >
 
@@ -104,5 +111,6 @@ const Header = () => {
 
   )
 }
+
 
 export default Header

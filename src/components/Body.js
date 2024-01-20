@@ -2,6 +2,7 @@ import React from 'react'
 import Login from './Login'
 import Browse from './Browse'
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
+import Shimmer from './Shimmer'
 
 const Body = () => {
 
@@ -13,6 +14,11 @@ const Body = () => {
         {
             path: '/browse',
             element: <Browse />,
+        },
+        {
+          path: '/shimmer',
+          element: <Shimmer />
+
         }
     ])
 

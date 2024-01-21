@@ -6,6 +6,9 @@ module.exports = {
   darkMode: "class", 
   theme: {
     extend: {
+      fontFamily: {
+        bebasneue: ["Bebas-Neue"]
+      }
     },
   },
   plugins: [require('tailwind-scrollbar-hide')],}

@@ -16,6 +16,8 @@ const Login = () => {
 
   const [isSignInForm, setIsSignInForm] = useState(true);
   const [errorMessage, setErrorMessage] = useState(false);
+  const [showPassword, setShowPassword] = useState(false);
+
   const dispatch = useDispatch();
 
   const name = useRef(null);
@@ -89,23 +91,27 @@ const Login = () => {
   const toggleSignIn = () => {
     setIsSignInForm(!isSignInForm);
   }
+
+  const togglePassword = () => {
+    setShowPassword(!showPassword)
+  }
   return (
     <div>
-              <Header />
+      <Header />
 
-    <div className='absolute '>
-        <img 
-        className='w-screen md:object-cover object-cover'
-        src={NETFLIX_BACKGROUND}
-        alt='logo'
-        />
-    </div>
+        <div className='absolute '>
+          <img 
+            className='w-screen md:object-cover object-cover'
+            src={NETFLIX_BACKGROUND}
+            alt='logo'
+          />
+        </div>
 
 <form 
 className='absolute w-full h-min md:w-3/12 p-12 my-20 text-white mx-auto left-0 right-0 bg-black rounded-lg bg-opacity-80 '
 onSubmit={(e) => e.preventDefault()}
 >
-<h1 className='text-3xl py-4  font-bold'>
+<h1 className='text-4xl py-4  font-bebasneue  font-bold'>
 {isSignInForm ? "Sign In" : "Sign Up"}
 </h1>
 
@@ -127,13 +133,19 @@ placeholder='Email Address'
 
 <input
 ref={password}
-type='password'
+type={showPassword ? "text" : "password"}
 className='w-full p-4 my-4 bg-gray-800 '
 placeholder='Password'
 />
-<p className='text-red-500 font-bold text-lg'>{errorMessage}</p>
+<input
+className=' h-10 w-4 accent-white' 
+type='checkbox'
+onClick={togglePassword}
+/> 
+<p className='text-yellow-600 font-bebasneue  text-lg text-center border-yellow-900'>{errorMessage}</p>
+
 <button 
-className='w-full my-10 p-4 rounded-lg bg-red-700 '
+className='w-full my-6 p-4 rounded-lg bg-red-700 '
 onClick={handleButtonClick}
 >
   {isSignInForm ? "Sign In" : "Sign Up"}

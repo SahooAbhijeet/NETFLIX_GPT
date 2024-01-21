@@ -17,12 +17,12 @@ const Header = () => {
 
 
 
-  const handleSignOut = () => {
-    signOut(auth).then(() => {
-    }).catch((error) => {
-      navigate("/error");
-    });
-  }
+    const handleSignOut = () => {
+      signOut(auth).then(() => {
+      }).catch((error) => {
+        navigate("/error");
+      });
+    }
 
   useEffect(() => {
 
@@ -70,13 +70,13 @@ const Header = () => {
         className='w-44 mx-auto md:mx-0'
         />
 
-
-
-
         {user && (
         <div className='flex p-2 '>
             {showGptSearch && (
-            <select className='p-2 m-2 bg-gray-900 text-white appearance-auto dark:bg-slate-800' onChange={handleChangeLanguage}>
+              <select 
+                className='p-2 m-2 bg-gray-900 text-white appearance-auto dark:bg-slate-800' 
+                onChange={handleChangeLanguage}
+              >
               {SUPPORTED_LANGUAGES.map((lang) => (
               <option key={lang.identifer}value={lang.identifer}>
                 {lang.name}

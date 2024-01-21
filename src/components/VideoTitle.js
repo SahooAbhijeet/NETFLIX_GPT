@@ -5,7 +5,7 @@ import { IoIosInformationCircleOutline } from "react-icons/io";
 const VideoTitle = ({title, overview}) => {
   return (
     <div className='pt-[10%] px-6 md:px-24 absolute bg-gradient-to-r from-black text-white w-screen aspect-video'>
-      <h1 className='font-bold text-2xl md:text-7xl md:mt-0 mt-[140px] '>{title}</h1>
+      <h1 className='font-bold text-2xl md:text-5xl md:mt-0 mt-[140px] group-hover:text-lg'>{title}</h1>
       {/* { <p className='w-1/3 text-lg py-6 hidden md:inline-block'>{overview}</p>} */}
 
       <div>

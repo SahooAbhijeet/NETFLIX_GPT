@@ -27,6 +27,7 @@ const Header = () => {
   useEffect(() => {
 
     const unSubscribe = onAuthStateChanged(auth, (user) => {
+      // User is signed in
       if (user) {
         const { uid, email, displayName, photoURL } = user;
         dispatch(
@@ -42,6 +43,7 @@ const Header = () => {
         navigate("/browse");
       }
       else {
+        //User is signed out
         dispatch(removeUser());
         navigate("/");
       }

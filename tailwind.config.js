@@ -7,7 +7,9 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        bebasneue: ["Bebas-Neue"]
+        bebasneue: ["Bebas-Neue","Open-Sans"],
+        monte:["Montserrat"],
+        
       }
     },
   },

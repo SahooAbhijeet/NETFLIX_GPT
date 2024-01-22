@@ -42,6 +42,7 @@ const Login = () => {
         .then((userCredential) => {
           // Signed up 
       const user = userCredential.user;
+      console.log(user);
       updateProfile(user, {
         displayName: name.current.value, photoURL: USER_AVATAR
       }).then(() => {
@@ -119,7 +120,7 @@ onSubmit={(e) => e.preventDefault()}
 <input
 ref={name}
 type='text'
-className='w-full my-4 p-4 bg-gray-800'
+className='w-full my-4 p-4 bg-gray-800  '
 placeholder='Full Name'
 />
 )}
@@ -142,17 +143,18 @@ className=' h-10 w-4 accent-white'
 type='checkbox'
 onClick={togglePassword}
 /> 
-<p className='text-yellow-600 font-bebasneue  text-lg text-center border-yellow-900'>{errorMessage}</p>
+<p className='text-yellow-600 font-bebasneue text-lg text-center border-yellow-900'>{errorMessage}</p>
+
 
 <button 
-className='w-full my-6 p-4 rounded-lg bg-red-700 '
+className='w-full my-6 p-4 rounded-lg  bg-red-700 font-bebasneue'
 onClick={handleButtonClick}
 >
   {isSignInForm ? "Sign In" : "Sign Up"}
 
 </button>
 
-<p className='mb-2 cursor-pointer'
+<p className='mb-2 cursor-pointer font-serif'
 onClick={toggleSignIn}
 >{isSignInForm ? "New to Netflix? Sign Up Now" : "Already Registered? Sign In Now."}</p>
 </form>

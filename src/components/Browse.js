@@ -10,6 +10,7 @@ import { useSelector } from 'react-redux';
 import useTopRatedMovies from '../hooks/useTopRatedMovies';
 import useRatedTVEpisodes from '../hooks/useRatedTVEpisodes';
 import useHorrorMovies from '../hooks/useHorrorMovies';
+import Footer from './Footer';
 
 const Browse = () => {
 
@@ -30,6 +31,7 @@ const Browse = () => {
             <>  
         <MainContainer />
         <SecondaryContainer />
+        <Footer />
             </>
         )}
 
